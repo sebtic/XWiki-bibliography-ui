@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.projectsforge.xwiki</groupId>
+	<artifactId>bibliography-ui</artifactId>
+	<version>1.0</version>
+	<name>XWiki Bibliography UI</name>
+	<description>XWiki Bibliography UI</description>
+	<packaging>xar</packaging>
+
+	<organization>
+		<name>Projectsforge.org</name>
+		<url>https://gitlab.projectsforge.org</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>sebtic@projectsforge.org</id>
+			<name>Sébastien Aupetit</name>
+			<email>sebtic@projectsforge.org</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://gitlab.projectsforge.org/XWiki/bibliography-ui</url>
+		<connection>scm:git:https://gitlab.projectsforge.org/XWiki/bibliography-ui.git</connection>
+		<developerConnection>scm:git:ssh://git@gitlab.projectsforge.org:2222/XWiki/bibliography-ui.git</developerConnection>
+	</scm>
+	<ciManagement>
+		<system>gitlab-ci</system>
+		<url>https://gitlab.projectsforge.org/XWiki/bibliography-ui</url>
+	</ciManagement>
+	<issueManagement>
+		<system>gitlab</system>
+		<url>https://gitlab.projectsforge.org/XWiki/bibliography-ui/issues</url>
+	</issueManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<commons.version>8.1</commons.version>
+		<rendering.version>8.1</rendering.version>
+		<platform.version>8.1</platform.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.xwiki.commons</groupId>
+				<artifactId>xwiki-commons-tool-xar-plugin</artifactId>
+				<version>${commons.version}</version>
+				<configuration>
+					<!-- hide all pages -->
+					<technicalPages>
+						<technicalPage>.*\.xml</technicalPage>
+					</technicalPages>
+				</configuration>
+				<executions>
+					<execution>
+						<id>format-xar</id>
+						<goals>
+							<goal>format</goal>
+						</goals>
+						<phase>process-resources</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.xwiki.commons</groupId>
+				<artifactId>xwiki-commons-tool-xar-handlers</artifactId>
+				<version>${commons.version}</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<dependencies>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>xwiki-snapshots</id>
+			<name>XWiki Nexus Snapshot Repository Proxy</name>
+			<url>http://nexus.xwiki.org/nexus/content/groups/public-snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>xwiki-releases</id>
+			<name>XWiki Nexus Releases Repository Proxy</name>
+			<url>http://nexus.xwiki.org/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>projectsforge-private-releases</id>
+			<url>https://nexus.projectsforge.org/repository/projectsforge-private-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>projectsforge-private-snapshots</id>
+			<url>https://nexus.projectsforge.org/repository/projectsforge-private-snapshots//</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
