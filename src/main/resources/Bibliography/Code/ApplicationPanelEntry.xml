@@ -108,7 +108,7 @@ target=Bibliography.WebHome
 icon=icon:book</parameters>
     </property>
     <property>
-      <scope>global</scope>
+      <scope>wiki</scope>
     </property>
   </object>
   <content>{{include reference="XWiki.UIExtensionSheet" /}}</content>
