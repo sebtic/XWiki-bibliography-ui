@@ -103,6 +103,7 @@
     </property>
   </object>
   <content>{{velocity}}
+#set($docextras=[])
 #if ($isGuest)
   #set($login = ${$doc.getURL("login", "xredirect=$doc.externalURL")})
   #set($register = ${$xwiki.getURL($services.model.resolveDocument('', 'default'), "register", "xredirect=$doc.externalURL")})

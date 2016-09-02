@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<xwikidoc reference="Bibliography.WebPreferences" locale="">
+<xwikidoc version="1.2" reference="Bibliography.WebPreferences" locale="">
   <web>Bibliography</web>
   <name>WebPreferences</name>
   <language/>
-  <defaultLanguage/>
+  <defaultLanguage>en</defaultLanguage>
   <translation>0</translation>
-  <parent>Bibliography.WebHome</parent>
-  <creator>xwiki:XWiki.Admin</creator>
-  <author>xwiki:XWiki.Admin</author>
-  <customClass/>
-  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creator>XWiki.admin</creator>
   <creationDate>1471950247000</creationDate>
+  <parent>Bibliography.WebHome</parent>
+  <author>XWiki.admin</author>
+  <contentAuthor>XWiki.admin</contentAuthor>
   <date>1472385494000</date>
   <contentUpdateDate>1471950247000</contentUpdateDate>
-  <version>1.1</version>
+  <version>1.7</version>
   <title>Preferences</title>
-  <defaultTemplate/>
-  <validationScript/>
-  <comment/>
-  <minorEdit>false</minorEdit>
+  <comment>clear view right for XWiki.BibliographyUserGroup</comment>
+  <minorEdit>true</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
+  <content/>
   <object>
+    <name>Bibliography.WebPreferences</name>
+    <number>0</number>
+    <className>XWiki.XWikiGlobalRights</className>
+    <guid>f5863c2b-ee53-4fb0-819f-661de627444f</guid>
     <class>
       <name>XWiki.XWikiGlobalRights</name>
       <customClass/>
@@ -88,10 +89,6 @@
         <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
       </users>
     </class>
-    <name>Bibliography.WebPreferences</name>
-    <number>0</number>
-    <className>XWiki.XWikiGlobalRights</className>
-    <guid>f5863c2b-ee53-4fb0-819f-661de627444f</guid>
     <property>
       <allow>1</allow>
     </property>
@@ -103,6 +100,10 @@
     </property>
   </object>
   <object>
+    <name>Bibliography.WebPreferences</name>
+    <number>2</number>
+    <className>XWiki.XWikiGlobalRights</className>
+    <guid>e38ae2e5-c50a-4175-aa07-591463ca170f</guid>
     <class>
       <name>XWiki.XWikiGlobalRights</name>
       <customClass/>
@@ -168,10 +169,6 @@
         <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
       </users>
     </class>
-    <name>Bibliography.WebPreferences</name>
-    <number>2</number>
-    <className>XWiki.XWikiGlobalRights</className>
-    <guid>e38ae2e5-c50a-4175-aa07-591463ca170f</guid>
     <property>
       <allow>1</allow>
     </property>
@@ -183,6 +180,10 @@
     </property>
   </object>
   <object>
+    <name>Bibliography.WebPreferences</name>
+    <number>0</number>
+    <className>XWiki.XWikiPreferences</className>
+    <guid>85571b99-610a-4cd5-98db-b5a87a4070c3</guid>
     <class>
       <name>XWiki.XWikiPreferences</name>
       <customClass/>
@@ -1374,10 +1375,5 @@
         <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
       </xwiki.title.mandatory>
     </class>
-    <name>Bibliography.WebPreferences</name>
-    <number>0</number>
-    <className>XWiki.XWikiPreferences</className>
-    <guid>85571b99-610a-4cd5-98db-b5a87a4070c3</guid>
   </object>
-  <content/>
 </xwikidoc>

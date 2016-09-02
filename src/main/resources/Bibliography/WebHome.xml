@@ -1,43 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<xwikidoc reference="Bibliography.WebHome" locale="">
+<xwikidoc version="1.2" reference="Bibliography.WebHome" locale="">
   <web>Bibliography</web>
   <name>WebHome</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
-  <parent>Main.WebHome</parent>
-  <creator>xwiki:XWiki.Admin</creator>
-  <author>xwiki:XWiki.Admin</author>
-  <customClass/>
-  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creator>XWiki.admin</creator>
   <creationDate>1467795004000</creationDate>
-  <date>1472227297000</date>
-  <contentUpdateDate>1472227297000</contentUpdateDate>
-  <version>1.1</version>
+  <parent>Main.WebHome</parent>
+  <author>XWiki.admin</author>
+  <contentAuthor>XWiki.admin</contentAuthor>
+  <date>1472827695000</date>
+  <contentUpdateDate>1472827695000</contentUpdateDate>
+  <version>23.1</version>
   <title/>
-  <defaultTemplate/>
-  <validationScript/>
-  <comment/>
+  <comment>allow view right for XWiki.BibliographyAdminGroup</comment>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>The bibliography application allows to manager biliographic data on XWiki.
-
+  <content>{{velocity}}
+#set($docextras=[])
+The bibliography application allows to manager biliographic data on XWiki.
 
 The current available actions are :
 
-* [[Import from BibTex/BibLaTeX&gt;&gt;doc:Bibliography.Code.ImportBibTeX]]
-* [[Create a person&gt;&gt;doc:Bibliography.Code.CreatePerson]]
-* [[Create an entry&gt;&gt;doc:Bibliography.Code.CreateEntry]]
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Data.Entries.WebHome'))
 * [[Search for an entry&gt;&gt;doc:Bibliography.Data.Entries.WebHome]]
+#end
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Data.Persons.WebHome'))
 * [[Search for a person&gt;&gt;doc:Bibliography.Data.Persons.WebHome]]
+#end
+
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Code.ImportBibTeX'))
+* [[Import from BibTex/BibLaTeX&gt;&gt;doc:Bibliography.Code.ImportBibTeX]]
+#end
+
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Code.CreatePerson'))
+* [[Create a person&gt;&gt;doc:Bibliography.Code.CreatePerson]]
+#end
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Code.MergePersons'))
 * [[Merge two persons&gt;&gt;doc:Bibliography.Code.MergePersons]]
-* [[List the indexed spaces&gt;&gt;doc:Bibliography.Code.ListIndexedSpaces]]
+#end
+
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Code.CreateEntry'))
+* [[Create an entry&gt;&gt;doc:Bibliography.Code.CreateEntry]]
+#end
+
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Configuration.Configuration'))
 * [[View configuration&gt;&gt;doc:Bibliography.Configuration.Configuration]]
+#end
+
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Code.EntryTypes'))
 * [[View entry types&gt;&gt;doc:Bibliography.Code.EntryTypes]]
+#end
 
-(((
+#if( $services.security.authorization.hasAccess('view', 'Bibliography.Code.ListIndexedSpaces'))
+* [[List the indexed spaces&gt;&gt;doc:Bibliography.Code.ListIndexedSpaces]]
+#end
 
-)))</content>
+{{/velocity}}</content>
+  <object>
+    <name>Bibliography.WebHome</name>
+    <number>0</number>
+    <className>XWiki.XWikiRights</className>
+    <guid>26150112-0356-4c72-870f-8e03cdeb8855</guid>
+    <class>
+      <name>XWiki.XWikiRights</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <allow>
+        <defaultValue>1</defaultValue>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>allow</displayType>
+        <name>allow</name>
+        <number>4</number>
+        <prettyName>Allow/Deny</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </allow>
+      <groups>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <multiSelect>1</multiSelect>
+        <name>groups</name>
+        <number>1</number>
+        <picker>1</picker>
+        <prettyName>Groups</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <size>5</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+      </groups>
+      <levels>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>1</multiSelect>
+        <name>levels</name>
+        <number>2</number>
+        <prettyName>Levels</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <size>3</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+      </levels>
+      <users>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <multiSelect>1</multiSelect>
+        <name>users</name>
+        <number>3</number>
+        <picker>1</picker>
+        <prettyName>Users</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <size>5</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+      </users>
+    </class>
+    <property>
+      <allow>1</allow>
+    </property>
+    <property>
+      <groups>XWiki.BibliographyUserGroup</groups>
+    </property>
+    <property>
+      <levels>view</levels>
+    </property>
+  </object>
+  <object>
+    <name>Bibliography.WebHome</name>
+    <number>1</number>
+    <className>XWiki.XWikiRights</className>
+    <guid>738fd135-9b9e-46c3-ae6e-c329aa4e04ea</guid>
+    <class>
+      <name>XWiki.XWikiRights</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <allow>
+        <defaultValue>1</defaultValue>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>allow</displayType>
+        <name>allow</name>
+        <number>4</number>
+        <prettyName>Allow/Deny</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </allow>
+      <groups>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <multiSelect>1</multiSelect>
+        <name>groups</name>
+        <number>1</number>
+        <picker>1</picker>
+        <prettyName>Groups</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <size>5</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+      </groups>
+      <levels>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>1</multiSelect>
+        <name>levels</name>
+        <number>2</number>
+        <prettyName>Levels</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <size>3</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+      </levels>
+      <users>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <multiSelect>1</multiSelect>
+        <name>users</name>
+        <number>3</number>
+        <picker>1</picker>
+        <prettyName>Users</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <size>5</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+      </users>
+    </class>
+    <property>
+      <allow>1</allow>
+    </property>
+    <property>
+      <groups>XWiki.BibliographyAdminGroup</groups>
+    </property>
+    <property>
+      <levels>view</levels>
+    </property>
+  </object>
 </xwikidoc>

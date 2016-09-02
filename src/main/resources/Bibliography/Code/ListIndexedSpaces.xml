@@ -252,6 +252,7 @@
     </property>
   </object>
   <content>{{velocity}}
+#set($docextras=[])
 $xwiki.jsx.use("Bibliography.Code.ListIndexedSpaces")
 $xwiki.ssx.use("Bibliography.Code.ListIndexedSpaces")
 #set($docextras=[])
