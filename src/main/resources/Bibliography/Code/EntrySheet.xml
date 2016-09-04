@@ -767,7 +767,7 @@ $xwiki.ssx.use("Bibliography.Code.EntrySheet")
   #end
 #end ## end showvalidationmessage
 ### this macros displays a field and it's tooltip
-#macro(showfield $fieldname)
+#macro(showfield $fieldname $errorCodes)
   #if( $mode == "edit")
     (% fieldname="$fieldname" class="simpleinput" %) (((
       &lt;label for="Bibliography.Code.EntryClass_0_$fieldname"
@@ -777,7 +777,9 @@ $xwiki.ssx.use("Bibliography.Code.EntrySheet")
           &lt;span class="tooltip-mark"&gt;$services.icon.render('question','Silk')&lt;/span&gt; :
       &lt;/label&gt;
       &lt;div&gt;$curdoc.display($fieldname, $mode)
-     #showvalidationmessage("bibliography.entry.val_$fieldname")
+      #foreach($errorCode in $errorCodes)
+        #showvalidationmessage($errorCodes)
+      #end
      &lt;/div&gt;
     )))
   #else
@@ -896,6 +898,7 @@ $curdoc.use("Bibliography.Code.EntryClass")
 #set($fields = ["id", "type", "title", "authors", "editors", "containerAuthors", "directors", "collectionEditors", "editorialDirectors", "interviewers", "illustrators", "recipients", "translators", "composers", "containerTitle", "collectionTitle", "chapterNumber", "collectionNumber", "issued", "event", "eventDate", "eventPlace", "accessed", "issue", "number", "volume", "numberOfVolumes", "edition", "version", "genre", "publisher", "publisherPlace", "page", "numberOfPages", "ISBN", "ISSN", "DOI", "URL", "note", "submitted", "status", "language", "abstract", "categories", "journalAbbreviation", "shortTitle", "originalDate", "archive", "archiveLocation", "archivePlace", "authority", "callNumber", "containerTitleShort", "dimensions", "jurisdiction", "medium", "references", "reviewedTitle", "reviewedAuthors", "scale", "section", "source", "titleShort" ])
 #set($personfields = ["authors", "collectionEditors", "composers", "containerAuthors", "directors", "editorialDirectors", "editors", "illustrators", "interviewers", "recipients", "reviewedAuthors", "translators" ])
 #set($bigfields = ["categories", "references",  "URL", 'abstract'])
+#set($datefields = ["accessed", "eventDate", "issued", "originalDate", "submitted"])
 #foreach($fieldname in $fields)
   #if ($personfields.contains($fieldname))
     #showpersonsselector($fieldname)
@@ -905,8 +908,16 @@ $curdoc.use("Bibliography.Code.EntryClass")
     #else
       #if($bigfields.contains($fieldname))
         #showbigfield($fieldname)
+      #else
+        #if($datefields.contains($fieldname))
+          #showbigfield($fieldname, ["bibliography.error.invalid-date"])
         #else
-        #showfield($fieldname)
+          #if($fieldname == "id")
+            #showfield($fieldname, ["bibliography.error.empty-id","bibliography.error.id-already-exists","bibliography.error.invalid-id-format"])
+          #else
+            #showfield($fieldname, [])
+          #end
+        #end      
       #end
     #end
   #end

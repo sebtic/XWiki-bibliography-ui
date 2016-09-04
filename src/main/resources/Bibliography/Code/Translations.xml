@@ -109,6 +109,11 @@ bibliography.entry.create.submit=Create
 bibliography.entry.val_id=Id must not be empty and must not exist on this wiki.
 bibliography.entry.tooltip_id=Define they key used when citing the bibliographic entry.
 
+bibliography.error.invalid-date=The field must be empty or a valid date YYYY, YYYY-MM, YYYY-MM-DD, YYYY/YYYY, YYYY-MM/YYYY-MM or YYYY-MM-DD/YYYY-MM-DD.
+bibliography.error.empty-id=Id can not be empty.
+bibliography.error.id-already-exists=This id already exists.
+bibliography.error.invalid-id-format=The id can only contain lower case letters, upper case letters, numbers, :, - and _. The id length must be between 2 and 50.
+
 bibliography.entry.rendered=Citation
 bibliography.entry.biblatex=BibLaTeX
 bibliography.entry.details=Details
@@ -264,7 +269,7 @@ bibliography.entry.tooltip_titleShort=
 
 bibliography.entry.selectanoption=Select an option
 
-bibliography.error.parse-bitex=Could not parse BibTeX ($escapetool.html({0})).
+bibliography.error.parse-bitex=Could not parse BibTeX ({0}).
 
 
 bibliography.wysiwyg.category=Bibliography
