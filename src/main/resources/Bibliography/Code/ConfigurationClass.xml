@@ -72,10 +72,10 @@
     </entryStyle>
     <extraSources>
       <cache>0</cache>
-      <classname>XWiki.XWikiServerClass</classname>
+      <classname/>
       <customDisplay/>
       <disabled>0</disabled>
-      <displayType>select</displayType>
+      <displayType>input</displayType>
       <idField/>
       <multiSelect>1</multiSelect>
       <name>extraSources</name>
@@ -85,13 +85,13 @@
       <relationalStorage>0</relationalStorage>
       <separator>,</separator>
       <separators>,</separators>
-      <size>1</size>
+      <size>80</size>
       <sort>id</sort>
       <sql/>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
-      <valueField>wikiprettyname</valueField>
+      <valueField/>
       <classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
     </extraSources>
     <scope>
