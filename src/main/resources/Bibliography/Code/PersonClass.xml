@@ -128,21 +128,6 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
     </renderedGivenFirst>
-    <searchValue>
-      <customDisplay/>
-      <disabled>1</disabled>
-      <editor>Text</editor>
-      <name>searchValue</name>
-      <number>7</number>
-      <picker>0</picker>
-      <prettyName>searchValue</prettyName>
-      <rows>5</rows>
-      <size>40</size>
-      <unmodifiable>0</unmodifiable>
-      <validationMessage/>
-      <validationRegExp/>
-      <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </searchValue>
     <suffix>
       <customDisplay/>
       <disabled>0</disabled>

@@ -262,6 +262,8 @@ bibliography.entry.label_titleShort=Title short
 bibliography.entry.tooltip_titleShort=
 
 
+bibliography.entry.selectanoption=Select an option
+
 bibliography.error.parse-bitex=Could not parse BibTeX ($escapetool.html({0})).
 
 

@@ -147,7 +147,7 @@
       &lt;textarea rows="20" cols="100" name="bibtex" 
         data-toggle='tooltip' 
         title='$services.localization.render("bibliography.import.bibtex.tooltip_bibtex")'&gt;
-      $request.bibtex
+        $!request.bibtex
       &lt;/textarea&gt;
     )))
     (((
