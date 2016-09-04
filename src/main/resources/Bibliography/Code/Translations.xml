@@ -270,18 +270,20 @@ bibliography.wysiwyg.category=Bibliography
 bibliography.persons.title=List of the persons
 bibliography.persons.livetable.renderedGivenFirst=Description
 bibliography.persons.livetable._actions=Actions
+bibliography.persons.livetable.emptyvalue=
 
 bibliography.entries.title=List of the entries
 bibliography.entries.livetable.id=Key
 bibliography.entries.livetable.rendered=Description
 bibliography.entries.livetable.issued=Date
 bibliography.entries.livetable._actions=Actions
+bibliography.entries.livetable.emptyvalue=
 
 bibliography.indexedspaces.title=List of indexed spaces
 bibliography.indexedspaces.livetable.doc.title=Title
 bibliography.indexedspaces.livetable.doc.space=Space
 bibliography.indexedspaces.livetable._actions=Actions
-
+bibliography.indexedspaces.livetable.emptyvalue=
 
 bibliography.annotation.create.submit=Save
 bibliography.annotation.create.title=Create an annotation
