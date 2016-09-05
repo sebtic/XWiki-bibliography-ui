@@ -221,7 +221,7 @@
       <groups>XWiki.BibliographyAdminGroup</groups>
     </property>
     <property>
-      <levels>view,edit</levels>
+      <levels>edit</levels>
     </property>
   </object>
   <content/>

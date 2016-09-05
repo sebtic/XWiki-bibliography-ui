@@ -122,7 +122,7 @@
     $services.bibliography.clearErrors()
     #set($entryRef = $services.bibliography.findEntryReferenceOnWiki($services.model.createWikiReference($xcontext.wiki),$item.id))
     #if(!$entryRef)
-      #set($entryRef = $services.bibliography.createEntryFromCSLItemData($item))
+      #set($entryRef = $services.bibliography.createEntryFromCSLItemData($xcontext.userReference, $item))
       #if($entryRef)
         * $services.localization.render('bibliography.import.bibtex.created', [$item.id, $entryRef] )
       #else
