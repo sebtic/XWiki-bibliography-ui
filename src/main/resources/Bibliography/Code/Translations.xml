@@ -112,7 +112,7 @@ bibliography.entry.tooltip_id=Define they key used when citing the bibliographic
 bibliography.error.invalid-date=The field must be empty or a valid date YYYY, YYYY-MM, YYYY-MM-DD, YYYY/YYYY, YYYY-MM/YYYY-MM or YYYY-MM-DD/YYYY-MM-DD.
 bibliography.error.empty-id=Id can not be empty.
 bibliography.error.id-already-exists=This id already exists.
-bibliography.error.invalid-id-format=The id can only contain lower case letters, upper case letters, numbers, :, - and _. The id length must be between 2 and 50.
+bibliography.error.invalid-id-format=The id can only contain lower case letters, upper case letters, numbers, :, -, . and _. The id length must be between 2 and 50.
 
 bibliography.entry.rendered=Citation
 bibliography.entry.biblatex=BibLaTeX
