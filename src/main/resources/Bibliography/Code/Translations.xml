@@ -97,7 +97,7 @@ bibliography.person.renderedGivenFirst=Description (Given name first)
 bibliography.person.details=Details
 
 bibliography.person.referencedBy=Entries referencing this person: {0}
-bibliography.person.referencedByButInaccessible=A entry for which you don't have access.
+bibliography.person.referencedByButInaccessible=Inaccessible entries : {0}.
 bibliography.person.referencedByOnOtherWiki=On wiki {0}
 
 
@@ -129,7 +129,7 @@ bibliography.entry.deleteattachment=Delete the attachement group
 bibliography.entry.addattachment=Add an attachment group
 
 bibliography.entry.referencedBy=Documents citing this entry: {0}
-bibliography.entry.referencedByButInaccessible=A document for which you don't have access.
+bibliography.entry.referencedByButInaccessible=Inaccessible documents : {0}.
 bibliography.entry.referencedByOnOtherWiki=On wiki {0} (detection can be unreliable)
 
 bibliography.entry.lastmodified=Last modified by {0} on {1}
