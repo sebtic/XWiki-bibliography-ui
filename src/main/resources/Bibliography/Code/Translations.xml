@@ -336,5 +336,14 @@ bibliography.mergepersons.mergeerror=An error occurred
 bibliography.mergepersons.submit=Merge
 
 bibliography.entrytype.fieldsvisible=Visible field by default
-bibliography.entrytype.shouldfieldsbevisible=Visible field by default</content>
+bibliography.entrytype.shouldfieldsbevisible=Visible field by default
+
+bibliography.toc.title=Table of contents
+bibliography.toc.pleasewait=Please wait...
+bibliography.navigation.previous=Previous
+bibliography.navigation.next=Next
+bibliography.navigation.up=Up
+bibliography.navigation.firstpage=First page
+
+</content>
 </xwikidoc>
