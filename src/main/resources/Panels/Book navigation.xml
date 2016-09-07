@@ -109,7 +109,7 @@ Book navigation
 #panelfooter()
 #end
 #if($xcontext.action == "view")
-  #set($node = $services.bibliography.documentWalker.getNode($doc.documentReference))
+  #set($node = $services.booktools.documentWalker.getNode($doc.documentReference))
   #if($node.rootNode.index)
     #panelheader('')
     {{booknavigation}}
